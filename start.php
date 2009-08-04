@@ -44,10 +44,22 @@
 				$custom = str_replace("[wwwroot]",$CONFIG->wwwroot,$custom);
 				$custom = str_replace("[username]",$username,$custom);
 				$_SESSION['last_forward_from'] = $custom;
+				$_SESSION['after_profile_update'] = 'http://nytimes.com';
 			}
 		}
 							
 	}
 
+function redirect_after_profileupdate($event, $object_type, $user) {
+    if(!empty($_SESSION['after_profile_update'])) {
+  //elgg_alert("Foo!");
+      //  }
+        $next = $_SESSION['after_profile_update'];
+	unset($_SESSION['after_profile_update']);
+        forward($next);
+    }
+}
+
 	register_elgg_event_handler('create','user','login_redirector_init');
+        register_elgg_event_handler('profileupdate','user','redirect_after_profileupdate');
 ?>
