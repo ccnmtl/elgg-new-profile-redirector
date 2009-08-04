@@ -49,5 +49,5 @@
 							
 	}
 
-	register_elgg_event_handler('login','user','login_redirector_init');
+	register_elgg_event_handler('create','user','login_redirector_init');
 ?>
