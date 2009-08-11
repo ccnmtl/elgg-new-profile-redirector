@@ -14,20 +14,20 @@
 <p>
 	<?php echo elgg_echo('login_redirector:admin:config'); ?>
 	
-	<select name="params[redirectpage]">
-		<option value="dashboard" <?php if ($vars['entity']->redirectpage == 'dashboard') echo " selected=\"yes\" "; ?>><?php echo elgg_echo('login_redirector:admin:option:dashboard'); ?></option>
-		<option value="profile" <?php if ($vars['entity']->redirectpage == 'profile') echo " selected=\"yes\" "; ?>><?php echo elgg_echo('login_redirector:admin:option:profile'); ?></option>
-		<option value="custom" <?php if ($vars['entity']->redirectpage == 'custom') echo " selected=\"yes\" "; ?>><?php echo elgg_echo('login_redirector:admin:option:custom_redirect'); ?></option>
-		
+	<select name="params[redirectpage]" style="display:none;">
+	  <option value="custom" selected="yes">
+            <?php echo elgg_echo('login_redirector:admin:option:custom_redirect'); ?>
+          </option>
 	</select>
 	
 </p>
 <p>
 	<?php echo elgg_echo('login_redirector:admin:useroverride'); ?>
 	
-	<select name="params[useroverride]">
-		<option value="no" <?php if ($vars['entity']->useroverride != 'yes') echo " selected=\"yes\" "; ?>><?php echo elgg_echo('option:no'); ?></option>
-		<option value="yes" <?php if ($vars['entity']->useroverride == 'yes') echo " selected=\"yes\" "; ?>><?php echo elgg_echo('option:yes'); ?></option>		
+	<select name="params[useroverride]" style="display:none;">
+	  <option value="no" selected="yes">
+            <?php echo elgg_echo('option:no'); ?>
+          </option>
 	</select>
 </p>
 
