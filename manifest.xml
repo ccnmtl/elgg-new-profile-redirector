@@ -2,7 +2,7 @@
 <plugin_manifest>
 	<field key="author" value="Ethan Jucovy" />
 	<field key="version" value="0.1" />
-	<field key="description" value="Redirect users after first login only" />
+	<field key="description" value="Redirect users after the first time they save their profile" />
 	<field key="website" value="http://www.globalmdp.org" />
 	<field key="copyright" value="I don't know" />
 	<field key="licence" value="GNU Public License version 3" />
