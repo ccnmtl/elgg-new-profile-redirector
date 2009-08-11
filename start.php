@@ -1,20 +1,28 @@
 <?php
 
-	function set_user_redirect(){
-		global $CONFIG;
+function perform_redirect(){
+  global $CONFIG;
+  
+  $username = get_loggedin_user()->username;
+  
+  $custom = get_plugin_setting("custom_redirect","new_profile_redirector");
+  
+  if(!empty($_SESSION['profile_is_new']) && !empty($custom)){
+    $custom = str_replace("[wwwroot]",$CONFIG->wwwroot,$custom);
+    $custom = str_replace("[username]",$username,$custom);
 
-		$username = get_loggedin_user()->username;
+    unset($_SESSION['profile_is_new']);
 
-		$custom = get_plugin_setting("custom_redirect","new_profile_redirector");
+    forward($custom);
+  }
+  
+}
 
-		if(!empty($custom)){
-		$custom = str_replace("[wwwroot]",$CONFIG->wwwroot,$custom);
-		 $custom = str_replace("[username]",$username,$custom);
-		 $_SESSION['last_forward_from'] = $custom;
-		}
-		
-	}
+function set_session_flag() {
+  $_SESSION['profile_is_new'] = 1;
+}
 
-register_elgg_event_handler('create','user','set_user_redirect');
+register_elgg_event_handler('create','user','set_session_flag');
+register_elgg_event_handler('profileupdate', 'user', 'perform_redirect');
 
 ?>
