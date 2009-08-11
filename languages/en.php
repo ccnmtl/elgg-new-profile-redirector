@@ -8,7 +8,7 @@
 		'login_redirector:admin:option:custom_redirect' => "Use custom redirect",
 	
 		'login_redirector:admin:custom_redirect' => "Enter a custom redirect here",
-		'login_redirector:admin:custom_redirect_info' => "To redirect a user to a site or page of your liking, enter the custom url here. Using this option will prohibit the redirect override by users.<br />Enter the complete url (including http or https) or use one of the following shortcuts (including brackets):",
+		'login_redirector:admin:custom_redirect_info' => "To redirect a user to a site or page of your liking, enter the custom url here.<br/>Enter the complete url (including http or https) or use one of the following shortcuts (including brackets):",
 		
 	);
 	
