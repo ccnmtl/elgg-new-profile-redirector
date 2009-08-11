@@ -36,4 +36,5 @@
 
 function redirect_after_profileupdate($event, $object_type, $user) {
   register_elgg_event_handler('login','user','login_redirector_init');
+}
 ?>
