@@ -5,7 +5,7 @@
 
 		$username = get_loggedin_user()->username;
 
-		$custom = get_plugin_setting("custom_redirect","login_redirector");
+		$custom = get_plugin_setting("custom_redirect","first_login_redirector");
 
 		if(!empty($custom)){
 		$custom = str_replace("[wwwroot]",$CONFIG->wwwroot,$custom);
