@@ -8,7 +8,7 @@
 	* @link http://www.coldtrick.com/
 	*/
 
-	function redirectAdmin(){
+	function set_user_redirect(){
 		global $CONFIG;
 
 		$username = get_loggedin_user()->username;
@@ -23,6 +23,6 @@
 		
 	}
 
-register_elgg_event_handler('login','user','redirectAdmin');
+register_elgg_event_handler('create','user','set_user_redirect');
 
 ?>
