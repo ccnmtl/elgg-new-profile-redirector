@@ -13,6 +13,8 @@ function perform_redirect(){
 
     unset($_SESSION['profile_is_new']);
 
+    trigger_elgg_event('firstprofileupdate', 'user');
+
     forward($custom);
   }
   
