@@ -13,7 +13,7 @@ function perform_redirect(){
 
     get_loggedin_user()->profile_updated=1;
 
-    trigger_elgg_event('firstprofileupdate', 'user');
+    trigger_elgg_event('firstprofileupdate', 'user', $user);
 
     forward($custom);
   }
